@@ -1,0 +1,15 @@
+package estudandothread;
+
+public class Answer {
+    
+    private String anwser1;
+
+    public void setAnswer(String anwser1) {
+        this.anwser1 = anwser1;
+    }
+    
+    public String getAnswer(){
+        return anwser1;
+    }
+ 
+}

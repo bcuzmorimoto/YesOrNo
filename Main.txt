@@ -1,0 +1,46 @@
+package estudandothread;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        Answer answer1 = new Answer();
+        No teste = new No(answer1);
+        Yes segunda = new Yes(answer1);
+        
+        //Enunciado//
+        System.out.println("?? YES OR NO!");
+        System.out.println("");
+        
+        //Solicitando resposta//
+        System.out.println("Is that true?");
+        String answer = input.nextLine();
+        
+        //Executando as thread//
+        teste.start();
+        segunda.start();
+        
+        //Definindo resposta//
+        System.out.println("");
+        System.out.println("Press 'ENTER' to get the answer");
+        String request = input.nextLine();
+        
+        if (request != null){
+            teste.stop();
+            segunda.stop();
+        }
+        
+        //Exibindo a resposta//
+         if (answer1.getAnswer() == answer){
+            System.out.println("You're wrong!");
+        } else {
+            System.out.println("You're right!");
+        }
+
+        
+    }
+    
+}

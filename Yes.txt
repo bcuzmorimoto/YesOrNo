@@ -1,0 +1,26 @@
+package estudandothread;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Yes extends Thread {
+    
+    Answer answer1;
+    
+    public Yes (Answer answer1){
+        this.answer1 = answer1;
+    }
+    
+    public void run (){
+       while (true){
+            this.answer1.setAnswer("yes");
+           try {
+              sleep(10);
+           } catch (InterruptedException ex) {
+              Logger.getLogger(Yes.class.getName()).log(Level.SEVERE, null, ex);
+           }
+        
+        }
+    }
+    
+}
